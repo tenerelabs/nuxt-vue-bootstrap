@@ -1,0 +1,20 @@
+version: "3.7"
+
+services:
+  nuxt-vb:
+    build:
+      context: .
+    container_name: nuxt-vb
+    ports:
+      - 5000:3000
+    restart: always
+    volumes:
+      - .:/usr/src/app
+    networks:
+      frontend:
+        aliases:
+          - app
+
+networks:
+  frontend:
+    name: nuxtvb-network
